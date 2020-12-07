@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PlayerForm from 'src/components/PlayerForm';
-import { savePlayerName, displayPlayerName } from 'src/actions/tictactoe';
+import { savePlayerName, displayPlayerName, editPlayerName } from 'src/actions/tictactoe';
 
 const mapStateToProps = (state, ownProps) => {
   const playerName = 'playerName' + ownProps.id;
@@ -16,6 +16,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
   displayPlayerName: (id) => {
     dispatch(displayPlayerName(id));
+  },
+  editPlayerName: (id) => {
+    dispatch(editPlayerName(id));
   },
 });
 

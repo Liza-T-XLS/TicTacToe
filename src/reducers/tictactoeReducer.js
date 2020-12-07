@@ -1,4 +1,4 @@
-import { SAVE_PLAYER_NAME, DISPLAY_PLAYER_NAME } from 'src/actions/tictactoe';
+import { SAVE_PLAYER_NAME, DISPLAY_PLAYER_NAME, EDIT_PLAYER_NAME } from 'src/actions/tictactoe';
 
 const initialState = {
   playerName1: '',
@@ -15,12 +15,20 @@ const tictactoeReducer = (state = initialState, action = {}) => {
         ...state,
         [playerName]: action.newValue,
       };
-    case DISPLAY_PLAYER_NAME:
+    case DISPLAY_PLAYER_NAME: {
       const displayPlayerName = 'displayPlayerName' + action.id;
       return {
         ...state,
         [displayPlayerName]: true,
       };
+    }
+    case EDIT_PLAYER_NAME: {
+      const displayPlayerName = 'displayPlayerName' + action.id;
+      return {
+        ...state,
+        [displayPlayerName]: false,
+      };
+    }
     default: return state;
   }
 };
