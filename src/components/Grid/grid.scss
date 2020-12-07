@@ -9,5 +9,16 @@
   // row-gap: 5px;
   .item {
     border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .cross {
+      height: 60px;
+      width: 60px;
+    }
+    .circle {
+      height: 50px;
+      width: 50px;
+    }
   }
 }

@@ -1,26 +1,27 @@
-// == Import npm
+// == Imports
+
 import React from 'react';
 
-// == Import
-
 import './app.scss';
+
 import Header from 'src/components/Header';
 import PlayerForm from 'src/components/PlayerForm';
 import Grid from 'src/components/Grid';
 import Footer from 'src/components/Footer';
 
-// == Composant
+// == Component
+
 const App = () => (
   <div className="app">
     <Header />
     <main>
-      <div className="playerOne">
-        <p>Player One</p>
+      <div className="playerInfo">
+        <p className="playerNumber">Player One</p>
         <PlayerForm />
       </div>
       <Grid />
-      <div className="playerTwo">
-        <p>Player Two</p>
+      <div className="playerInfo">
+        <p className="playerNumber">Player Two</p>
         <PlayerForm />
       </div>
     </main>
@@ -29,4 +30,5 @@ const App = () => (
 );
 
 // == Export
+
 export default App;
