@@ -23,8 +23,10 @@ const PlayerForm = ({ id,
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    console.log('name ' + id + ' submitted');
-    displayPlayerName(id);
+    if (playerName.length > 1) {
+      console.log('name ' + id + ' submitted');
+      displayPlayerName(id);
+    }
   };
 
   const onClickHandler = (e) => {
@@ -38,7 +40,7 @@ const PlayerForm = ({ id,
         <form className="playerForm" onSubmit={onSubmitHandler}>
           <label htmlFor="playerName">
             <p className="instructions">Enter your name</p>
-            <input className="playerNameInput" type="text" name="playerName" value={playerName} onChange={onChangeHandler} />
+            <input className="playerNameInput" type="text" name="playerName" value={playerName} onChange={onChangeHandler} minLength="2" />
           </label>
         </form>
       )}
