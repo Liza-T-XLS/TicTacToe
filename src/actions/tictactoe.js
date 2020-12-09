@@ -4,6 +4,7 @@ export const SAVE_PLAYER_NAME = 'SAVE_PLAYER_NAME';
 export const DISPLAY_PLAYER_NAME = 'DISPLAY_PLAYER_NAME';
 export const EDIT_PLAYER_NAME = 'EDIT_PLAYER_NAME';
 export const CHANGE_MARK_FORM = 'CHANGE_MARK_FORM';
+export const RESET_GAME = 'RESET_GAME';
 
 // == action creators
 
@@ -26,4 +27,8 @@ export const editPlayerName = (id) => ({
 export const changeMarkForm = (id) => ({
   type: CHANGE_MARK_FORM,
   id,
+});
+
+export const resetGame = () => ({
+  type: RESET_GAME,
 });

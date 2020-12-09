@@ -1,6 +1,7 @@
 // == Imports
 
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './grid.scss';
 
@@ -15,6 +16,8 @@ const Grid = () => (
     ))}
   </div>
 );
+
+// PropTypes
 
 // == Export
 

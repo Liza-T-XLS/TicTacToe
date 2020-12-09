@@ -6,8 +6,8 @@ import './app.scss';
 
 import Header from 'src/components/Header';
 import PlayerForm from 'src/containers/PlayerForm';
-import Grid from 'src/components/Grid';
-import StartButton from 'src/components/StartButton';
+import Grid from 'src/containers/Grid';
+import StartButton from 'src/containers/StartButton';
 import Footer from 'src/components/Footer';
 
 // == Component

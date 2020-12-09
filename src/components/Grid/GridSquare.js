@@ -8,13 +8,18 @@ import circle from 'src/assets/circle.svg';
 
 // == Component
 
-const GridSquare = ({ id, markForm, changeMarkForm }) => {
+const GridSquare = ({ id, markForm, changeMarkForm, clickedStatus }) => {
   const crossMark = cross;
   const circleMark = circle;
 
   const gridSquareOnClickHandler = () => {
     console.log('square clicked ' + id);
-    changeMarkForm(id);
+    if (!clickedStatus) {
+      changeMarkForm(id);
+    }
+    else {
+      console.log('TODO: this spot has already been called');
+    }
   };
 
   if (markForm === 'cross') {
@@ -31,6 +36,11 @@ const GridSquare = ({ id, markForm, changeMarkForm }) => {
       </div>
     );
   }
+  return (
+    <div className="item" onClick={gridSquareOnClickHandler}>
+      {/* <img src={circleMark} alt={markForm} className={markForm} /> */}
+    </div>
+  );
 };
 
 // == PropTypes
@@ -39,6 +49,7 @@ GridSquare.propTypes = {
   id: PropTypes.number.isRequired,
   markForm: PropTypes.string,
   changeMarkForm: PropTypes.func.isRequired,
+  clickedStatus: PropTypes.bool.isRequired,
 };
 
 GridSquare.defaultProps = {

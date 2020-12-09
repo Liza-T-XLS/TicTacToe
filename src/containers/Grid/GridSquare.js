@@ -4,8 +4,10 @@ import { changeMarkForm } from 'src/actions/tictactoe';
 
 const mapStateToProps = (state, ownProps) => {
   const gridSquare = 'gridSquare' + ownProps.id;
+  console.log(state.[gridSquare].clicked);
   return ({
-    markForm: state.[gridSquare],
+    markForm: state.[gridSquare].form,
+    clickedStatus: state.[gridSquare].clicked,
   });
 };
 
