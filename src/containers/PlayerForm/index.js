@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     displayStatus: state.[displayStatus],
   });
 };
+
 const mapDispatchToProps = (dispatch) => ({
   savePlayerName: (id, newValue) => {
     dispatch(savePlayerName(id, newValue));
