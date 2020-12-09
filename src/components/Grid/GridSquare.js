@@ -8,12 +8,13 @@ import circle from 'src/assets/circle.svg';
 
 // == Component
 
-const GridSquare = ({ id, markForm }) => {
+const GridSquare = ({ id, markForm, changeMarkForm }) => {
   const crossMark = cross;
   const circleMark = circle;
 
   const gridSquareOnClickHandler = () => {
     console.log('square clicked ' + id);
+    changeMarkForm(id);
   };
 
   if (markForm === 'cross') {
@@ -37,6 +38,7 @@ const GridSquare = ({ id, markForm }) => {
 GridSquare.propTypes = {
   id: PropTypes.number.isRequired,
   markForm: PropTypes.string,
+  changeMarkForm: PropTypes.func.isRequired,
 };
 
 GridSquare.defaultProps = {

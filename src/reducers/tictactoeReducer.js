@@ -1,4 +1,4 @@
-import { SAVE_PLAYER_NAME, DISPLAY_PLAYER_NAME, EDIT_PLAYER_NAME } from 'src/actions/tictactoe';
+import { SAVE_PLAYER_NAME, DISPLAY_PLAYER_NAME, EDIT_PLAYER_NAME, CHANGE_MARK_FORM } from 'src/actions/tictactoe';
 
 const initialState = {
   playerName1: '',
@@ -37,6 +37,13 @@ const tictactoeReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [displayPlayerName]: false,
+      };
+    }
+    case CHANGE_MARK_FORM: {
+      const gridSquare = 'gridSquare' + action.id;
+      return {
+        ...state,
+        [gridSquare]: 'circle',
       };
     }
     default: return state;

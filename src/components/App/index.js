@@ -7,6 +7,7 @@ import './app.scss';
 import Header from 'src/components/Header';
 import PlayerForm from 'src/containers/PlayerForm';
 import Grid from 'src/components/Grid';
+import StartButton from 'src/components/StartButton';
 import Footer from 'src/components/Footer';
 
 // == Component
@@ -19,7 +20,10 @@ const App = () => (
         <p className="playerNumber">Player One</p>
         <PlayerForm id="1" />
       </div>
-      <Grid />
+      <div className="grid">
+        <Grid />
+        <StartButton />
+      </div>
       <div className="playerInfo">
         <p className="playerNumber">Player Two</p>
         <PlayerForm id="2" />
