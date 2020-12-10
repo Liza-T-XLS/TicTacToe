@@ -9,13 +9,16 @@ import circle from 'src/assets/circle.svg';
 
 // == Component
 
-const GridSquare = ({ id, markForm, changeMarkForm, clickedStatus, checkWin, winStatus }) => {
+const GridSquare = ({ id, markForm, changeMarkForm, clickedStatus, checkWin, victory, win }) => {
   const crossMark = cross;
   const circleMark = circle;
-
+  const cssClassName = classNames('cross', { winning: win });
+  console.log(win);
+  console.log('1: ' + cssClassName);
   const gridSquareOnClickHandler = () => {
     console.log('square clicked ' + id);
-    if (!clickedStatus) {
+
+    if (!clickedStatus && !victory) {
       changeMarkForm(id);
       checkWin(markForm);
     }
@@ -23,8 +26,10 @@ const GridSquare = ({ id, markForm, changeMarkForm, clickedStatus, checkWin, win
       console.log('TODO: this spot has already been called');
     }
   };
-  let cssClassName = classNames(markForm, { winStatus: true });
+
   if (markForm === 'cross') {
+    const cssClassName = classNames('cross', { winning: win });
+    console.log('x: ' + cssClassName);
     return (
       <div className="item" onClick={gridSquareOnClickHandler}>
         <img src={crossMark} alt={markForm} className={cssClassName} />
@@ -32,6 +37,7 @@ const GridSquare = ({ id, markForm, changeMarkForm, clickedStatus, checkWin, win
     );
   }
   if (markForm === 'circle') {
+    const cssClassName = classNames('circle', { winning: win });
     return (
       <div className="item" onClick={gridSquareOnClickHandler}>
         <img src={circleMark} alt={markForm} className={cssClassName} />
@@ -53,7 +59,8 @@ GridSquare.propTypes = {
   changeMarkForm: PropTypes.func.isRequired,
   clickedStatus: PropTypes.bool.isRequired,
   checkWin: PropTypes.func.isRequired,
-  winStatus: PropTypes.bool.isRequired,
+  victory: PropTypes.bool.isRequired,
+  win: PropTypes.bool.isRequired,
 };
 
 GridSquare.defaultProps = {

@@ -15,7 +15,7 @@
       .cross {
         height: 60px;
         width: 60px;
-        &.win {
+        &.winning {
           scale: 1.5;
           transition: scale 2s;
         }
@@ -23,7 +23,7 @@
       .circle {
         height: 50px;
         width: 50px;
-        &.win {
+        &.winning {
           scale: 1.5;
           transition: scale 2s;
         }

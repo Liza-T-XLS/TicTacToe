@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     markForm: gridSquare.form,
     clickedStatus: gridSquare.clicked,
-    winStatus: gridSquare.win,
+    victory: state.victory,
+    win: gridSquare.win,
   });
 };
 
