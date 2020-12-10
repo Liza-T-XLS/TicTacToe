@@ -2,9 +2,9 @@ import { connect } from 'react-redux';
 import StartButton from 'src/components/StartButton';
 import { resetGame } from 'src/actions/tictactoe';
 
-const mapStateToProps = (state, ownProps) => {
-
-};
+const mapStateToProps = (state, ownProps) => ({
+  startButtonMessage: state.startButtonMessage,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   resetGame: (id) => {

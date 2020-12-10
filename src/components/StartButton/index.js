@@ -7,20 +7,21 @@ import './startButton.scss';
 
 // == Component
 
-const StartButton = ({ resetGame }) => {
+const StartButton = ({ startButtonMessage, resetGame }) => {
   const startButtonOnClickHandler = () => {
     console.log('startButton clicked');
     resetGame();
   };
 
   return (
-    <button type="button" className="startButton" onClick={startButtonOnClickHandler}>Start game</button>
+    <button type="button" className="startButton" onClick={startButtonOnClickHandler}>{startButtonMessage}</button>
   );
 };
 
 // PropTypes
 
 StartButton.propTypes = {
+  startButtonMessage: PropTypes.string.isRequired,
   resetGame: PropTypes.func.isRequired,
 };
 

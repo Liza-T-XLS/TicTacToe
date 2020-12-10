@@ -5,6 +5,7 @@ export const DISPLAY_PLAYER_NAME = 'DISPLAY_PLAYER_NAME';
 export const EDIT_PLAYER_NAME = 'EDIT_PLAYER_NAME';
 export const CHANGE_MARK_FORM = 'CHANGE_MARK_FORM';
 export const RESET_GAME = 'RESET_GAME';
+export const CHECK_WIN = 'CHECK_WIN';
 
 // == action creators
 
@@ -31,4 +32,9 @@ export const changeMarkForm = (id) => ({
 
 export const resetGame = () => ({
   type: RESET_GAME,
+});
+
+export const checkWin = (move) => ({
+  type: CHECK_WIN,
+  move,
 });

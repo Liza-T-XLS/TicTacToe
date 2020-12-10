@@ -1,10 +1,11 @@
-import { SAVE_PLAYER_NAME, DISPLAY_PLAYER_NAME, EDIT_PLAYER_NAME, CHANGE_MARK_FORM, RESET_GAME } from 'src/actions/tictactoe';
+import { SAVE_PLAYER_NAME, DISPLAY_PLAYER_NAME, EDIT_PLAYER_NAME, CHANGE_MARK_FORM, RESET_GAME, CHECK_WIN } from 'src/actions/tictactoe';
 
 const initialState = {
   playerName1: '',
   playerName2: '',
   displayPlayerName1: false,
   displayPlayerName2: false,
+  startButtonMessage: 'Reset Game',
   gridSquare1: {
     form: '',
     clicked: false,
@@ -42,6 +43,7 @@ const initialState = {
     clicked: false,
   },
   turnCount: 0,
+  victory: false,
 };
 
 const tictactoeReducer = (state = initialState, action = {}) => {
@@ -86,9 +88,35 @@ const tictactoeReducer = (state = initialState, action = {}) => {
         [gridSquare]: newGridSquare,
       };
     }
+    case CHECK_WIN:
+      if ((state.gridSquare1.form === 'circle' && state.gridSquare2.form === 'circle' && state.gridSquare3.form === 'circle')
+      || (state.gridSquare1.form === 'cross' && state.gridSquare2.form === 'cross' && state.gridSquare3.form === 'cross')
+      || (state.gridSquare4.form === 'circle' && state.gridSquare5.form === 'circle' && state.gridSquare6.form === 'circle')
+      || (state.gridSquare4.form === 'cross' && state.gridSquare5.form === 'cross' && state.gridSquare6.form === 'cross')
+      || (state.gridSquare7.form === 'circle' && state.gridSquare8.form === 'circle' && state.gridSquare9.form === 'circle')
+      || (state.gridSquare7.form === 'cross' && state.gridSquare8.form === 'cross' && state.gridSquare9.form === 'cross')
+      || (state.gridSquare1.form === 'circle' && state.gridSquare4.form === 'circle' && state.gridSquare7.form === 'circle')
+      || (state.gridSquare1.form === 'cross' && state.gridSquare4.form === 'cross' && state.gridSquare7.form === 'cross')
+      || (state.gridSquare2.form === 'circle' && state.gridSquare5.form === 'circle' && state.gridSquare8.form === 'circle')
+      || (state.gridSquare2.form === 'cross' && state.gridSquare5.form === 'cross' && state.gridSquare8.form === 'cross')
+      || (state.gridSquare3.form === 'circle' && state.gridSquare6.form === 'circle' && state.gridSquare9.form === 'circle')
+      || (state.gridSquare3.form === 'cross' && state.gridSquare6.form === 'cross' && state.gridSquare9.form === 'cross')
+      || (state.gridSquare1.form === 'circle' && state.gridSquare5.form === 'circle' && state.gridSquare9.form === 'circle')
+      || (state.gridSquare1.form === 'cross' && state.gridSquare5.form === 'cross' && state.gridSquare9.form === 'cross')
+      || (state.gridSquare3.form === 'circle' && state.gridSquare5.form === 'circle' && state.gridSquare7.form === 'circle')
+      || (state.gridSquare3.form === 'cross' && state.gridSquare5.form === 'cross' && state.gridSquare7.form === 'cross')) {
+        return {
+          ...state,
+          victory: true,
+        };
+      }
+      return {
+        ...state,
+      };
     case RESET_GAME:
       return {
         ...state,
+        startButtonMessage: 'Reset Game',
         gridSquare1: {
           form: '',
           clicked: false,
@@ -125,6 +153,8 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           form: '',
           clicked: false,
         },
+        turnCount: 0,
+        victory: false,
       };
     default: return state;
   }

@@ -8,7 +8,7 @@ import circle from 'src/assets/circle.svg';
 
 // == Component
 
-const GridSquare = ({ id, markForm, changeMarkForm, clickedStatus }) => {
+const GridSquare = ({ id, markForm, changeMarkForm, clickedStatus, checkWin }) => {
   const crossMark = cross;
   const circleMark = circle;
 
@@ -16,6 +16,7 @@ const GridSquare = ({ id, markForm, changeMarkForm, clickedStatus }) => {
     console.log('square clicked ' + id);
     if (!clickedStatus) {
       changeMarkForm(id);
+      checkWin(markForm);
     }
     else {
       console.log('TODO: this spot has already been called');
@@ -50,6 +51,7 @@ GridSquare.propTypes = {
   markForm: PropTypes.string,
   changeMarkForm: PropTypes.func.isRequired,
   clickedStatus: PropTypes.bool.isRequired,
+  checkWin: PropTypes.func.isRequired,
 };
 
 GridSquare.defaultProps = {
