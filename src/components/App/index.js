@@ -5,7 +5,8 @@ import React from 'react';
 import './app.scss';
 
 import Header from 'src/components/Header';
-import PlayerForm from 'src/containers/PlayerForm';
+// import PlayerForm from 'src/containers/PlayerForm';
+import PlayerInfo from 'src/components/PlayerInfo';
 import Grid from 'src/containers/Grid';
 import StartButton from 'src/containers/StartButton';
 import Footer from 'src/components/Footer';
@@ -16,18 +17,12 @@ const App = () => (
   <div className="app">
     <Header />
     <main>
-      <div className="playerInfo">
-        <p className="playerNumber">Player One</p>
-        <PlayerForm id="1" />
-      </div>
+      <PlayerInfo number="1" player="Player One" />
       <div className="grid">
         <Grid />
         <StartButton />
       </div>
-      <div className="playerInfo">
-        <p className="playerNumber">Player Two</p>
-        <PlayerForm id="2" />
-      </div>
+      <PlayerInfo number="2" player="Player Two" />
     </main>
     <Footer />
   </div>
