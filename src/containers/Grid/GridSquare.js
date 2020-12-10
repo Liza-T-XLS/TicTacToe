@@ -3,11 +3,12 @@ import GridSquare from 'src/components/Grid/GridSquare';
 import { changeMarkForm, checkWin } from 'src/actions/tictactoe';
 
 const mapStateToProps = (state, ownProps) => {
-  const gridSquare = 'gridSquare' + ownProps.id;
-  console.log(state.[gridSquare].clicked);
+  const gridSquare = state.grid[ownProps.id - 1];
+  // console.log(state.[gridSquare].clicked);
   return ({
-    markForm: state.[gridSquare].form,
-    clickedStatus: state.[gridSquare].clicked,
+    markForm: gridSquare.form,
+    clickedStatus: gridSquare.clicked,
+    winStatus: gridSquare.win,
   });
 };
 

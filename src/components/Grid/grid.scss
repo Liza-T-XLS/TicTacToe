@@ -15,10 +15,18 @@
       .cross {
         height: 60px;
         width: 60px;
+        &.win {
+          scale: 1.5;
+          transition: scale 2s;
+        }
       }
       .circle {
         height: 50px;
         width: 50px;
+        &.win {
+          scale: 1.5;
+          transition: scale 2s;
+        }
       }
     }
   }

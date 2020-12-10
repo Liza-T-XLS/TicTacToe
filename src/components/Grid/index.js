@@ -9,15 +9,23 @@ import GridSquare from 'src/containers/Grid/GridSquare';
 
 // == Component
 
-const Grid = () => (
+const Grid = ({ grid }) => (
   <div className="container">
-    {Array(9).fill(null).map((value, index) => (
-      <GridSquare key={index+1} id={index+1} />
+    {grid.map((gridSquare) => (
+      <GridSquare key={gridSquare.id} id={gridSquare.id} />
     ))}
   </div>
 );
 
 // PropTypes
+
+Grid.propTypes = {
+  grid: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
+};
 
 // == Export
 

@@ -3,7 +3,7 @@ import Grid from 'src/components/Grid';
 import { changeMarkForm } from 'src/actions/tictactoe';
 
 const mapStateToProps = (state) => ({
-  gridSquares: state.gridSquares,
+  grid: state.grid,
 });
 
 const mapDispatchToProps = (dispatch) => ({
