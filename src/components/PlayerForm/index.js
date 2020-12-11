@@ -8,12 +8,13 @@ import editPen from 'src/assets/edit-pen.svg';
 
 // == Component
 
-const PlayerForm = ({ id,
+const PlayerForm = ({
+  id,
   playerName,
   savePlayerName,
   displayPlayerName,
   displayStatus,
-  editPlayerName
+  editPlayerName,
 }) => {
   const onChangeHandler = (e) => {
     console.log(e.target.value);

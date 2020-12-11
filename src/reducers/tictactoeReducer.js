@@ -1,6 +1,26 @@
-import { SAVE_PLAYER_NAME, DISPLAY_PLAYER_NAME, EDIT_PLAYER_NAME, CHANGE_MARK_FORM, RESET_GAME, CHECK_WIN } from 'src/actions/tictactoe';
+import {
+  SAVE_PLAYER_NAME,
+  DISPLAY_PLAYER_NAME,
+  EDIT_PLAYER_NAME,
+  CHANGE_MARK_FORM,
+  RESET_GAME,
+  CHECK_WIN,
+  SEND_MESSAGE,
+} from 'src/actions/tictactoe';
 
 const initialState = {
+  players: [
+    {
+      id: 1,
+      name: '',
+      displayName: false,
+    },
+    {
+      id: 2,
+      name: '',
+      displayName: false,
+    },
+  ],
   playerName1: '',
   playerName2: '',
   displayPlayerName1: false,
@@ -62,33 +82,61 @@ const initialState = {
       win: false,
     },
   ],
+  ready: false,
   turnCount: 0,
   victory: false,
+  message: 'Are you ready?',
 };
 
 const tictactoeReducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case SAVE_PLAYER_NAME: {
-      const playerName = 'playerName' + action.id;
+      const newPlayers = [
+        ...state.players,
+      ];
+      const newPlayer = {
+        ...state.players[action.id - 1],
+        name: action.newValue,
+      };
+      newPlayers[action.id - 1] = newPlayer;
       return {
         ...state,
-        [playerName]: action.newValue,
+        players: newPlayers,
       };
     }
     case DISPLAY_PLAYER_NAME: {
-      const displayPlayerName = 'displayPlayerName' + action.id;
+      const newPlayers = [
+        ...state.players,
+      ];
+      const newPlayer = {
+        ...state.players[action.id - 1],
+        displayName: true,
+      };
+      newPlayers[action.id - 1] = newPlayer;
       return {
         ...state,
-        [displayPlayerName]: true,
+        players: newPlayers,
       };
     }
     case EDIT_PLAYER_NAME: {
-      const displayPlayerName = 'displayPlayerName' + action.id;
+      const newPlayers = [
+        ...state.players,
+      ];
+      const newPlayer = {
+        ...state.players[action.id - 1],
+        displayName: false,
+      };
+      newPlayers[action.id - 1] = newPlayer;
       return {
         ...state,
-        [displayPlayerName]: false,
+        players: newPlayers,
       };
     }
+    case SEND_MESSAGE:
+      return {
+        ...state,
+        message: action.content,
+      }
     case CHANGE_MARK_FORM: {
       let shape;
       if ((state.turnCount % 2) === 0) {
@@ -721,8 +769,10 @@ const tictactoeReducer = (state = initialState, action = {}) => {
             win: false,
           },
         ],
+        ready: false,
         turnCount: 0,
         victory: false,
+        message: 'Are you ready?',
       };
     default: return state;
   }

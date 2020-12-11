@@ -3,11 +3,10 @@ import PlayerForm from 'src/components/PlayerForm';
 import { savePlayerName, displayPlayerName, editPlayerName } from 'src/actions/tictactoe';
 
 const mapStateToProps = (state, ownProps) => {
-  const playerName = 'playerName' + ownProps.id;
-  const displayStatus = 'displayPlayerName' + ownProps.id;
+  const player = state.players[ownProps.id - 1];
   return ({
-    playerName: state.[playerName],
-    displayStatus: state.[displayStatus],
+    playerName: player.name,
+    displayStatus: player.displayName,
   });
 };
 

@@ -9,17 +9,17 @@ import PlayerForm from 'src/containers/PlayerForm';
 
 // ==  Component
 
-const PlayerInfo = ({ number, player }) => (
+const PlayerInfo = ({ id, player }) => (
   <div className="playerInfo">
     <p className="playerNumber">{player}</p>
-    <PlayerForm id={number} />
+    <PlayerForm id={id} />
   </div>
 );
 
 // == PropTypes
 
 PlayerInfo.propTypes = {
-  number: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   player: PropTypes.string.isRequired,
 };
 

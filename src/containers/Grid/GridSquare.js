@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 import GridSquare from 'src/components/Grid/GridSquare';
-import { changeMarkForm, checkWin } from 'src/actions/tictactoe';
+import { changeMarkForm, checkWin, sendMessage } from 'src/actions/tictactoe';
 
 const mapStateToProps = (state, ownProps) => {
   const gridSquare = state.grid[ownProps.id - 1];
   // console.log(state.[gridSquare].clicked);
   return ({
     markForm: gridSquare.form,
+    ready: state.ready,
     clickedStatus: gridSquare.clicked,
     victory: state.victory,
     win: gridSquare.win,
@@ -20,6 +21,9 @@ const mapDispatchToProps = (dispatch) => ({
   checkWin: (markForm) => {
     dispatch(checkWin(markForm));
   },
+  sendMessage: (content) => {
+    dispatch(sendMessage(content));
+  }
 });
 
 export default connect(
