@@ -113,6 +113,16 @@ const tictactoeReducer = (state = initialState, action = {}) => {
         displayName: true,
       };
       newPlayers[action.id - 1] = newPlayer;
+
+      if (state.players.find((player) => (
+        player.displayName === true
+      ))) {
+        return {
+          ...state,
+          players: newPlayers,
+          ready: true,
+        };
+      }
       return {
         ...state,
         players: newPlayers,
@@ -130,6 +140,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         players: newPlayers,
+        ready: false,
       };
     }
     case SEND_MESSAGE:
