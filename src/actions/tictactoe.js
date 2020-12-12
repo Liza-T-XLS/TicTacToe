@@ -7,6 +7,7 @@ export const CHANGE_MARK_FORM = 'CHANGE_MARK_FORM';
 export const RESET_GAME = 'RESET_GAME';
 export const CHECK_WIN = 'CHECK_WIN';
 export const SEND_MESSAGE = 'SEND_MESSAGE';
+export const CHECK_READY = 'CHECK_READY';
 
 // == action creators
 
@@ -43,4 +44,8 @@ export const checkWin = (move) => ({
 export const sendMessage = (content) => ({
   type: SEND_MESSAGE,
   content,
+});
+
+export const checkReady = () => ({
+  type: CHECK_READY,
 });

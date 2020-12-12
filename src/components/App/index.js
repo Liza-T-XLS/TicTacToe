@@ -1,6 +1,7 @@
 // == Imports
 
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 import './app.scss';
 
@@ -14,10 +15,11 @@ import Footer from 'src/components/Footer';
 
 // == Component
 
-const App = () => {
+const App = ({ players, checkReady }) => {
   useEffect(() => {
     console.log('ready?');
-  });
+    checkReady();
+  }, [players]);
 
   return (
     <div className="app">
@@ -35,6 +37,14 @@ const App = () => {
     </div>
   );
 };
+
+// == PropTypes
+
+App.propTypes = {
+  players: PropTypes.array.isRequired,
+  checkReady: PropTypes.func.isRequired,
+};
+
 // == Export
 
 export default App;

@@ -6,6 +6,7 @@ import {
   RESET_GAME,
   CHECK_WIN,
   SEND_MESSAGE,
+  CHECK_READY,
 } from 'src/actions/tictactoe';
 
 const initialState = {
@@ -21,10 +22,6 @@ const initialState = {
       displayName: false,
     },
   ],
-  playerName1: '',
-  playerName2: '',
-  displayPlayerName1: false,
-  displayPlayerName2: false,
   startButtonMessage: 'Reset Game',
   grid: [
     {
@@ -113,16 +110,6 @@ const tictactoeReducer = (state = initialState, action = {}) => {
         displayName: true,
       };
       newPlayers[action.id - 1] = newPlayer;
-
-      if (state.players.find((player) => (
-        player.displayName === true
-      ))) {
-        return {
-          ...state,
-          players: newPlayers,
-          ready: true,
-        };
-      }
       return {
         ...state,
         players: newPlayers,
@@ -140,6 +127,20 @@ const tictactoeReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         players: newPlayers,
+      };
+    }
+    case CHECK_READY: {
+      const playersReady = state.players.filter((player) => (
+        player.displayName === true)).length;
+      if (playersReady > 1) {
+        return {
+          ...state,
+          ready: true,
+          message: 'Let\'s play!',
+        };
+      }
+      return {
+        ...state,
         ready: false,
       };
     }
@@ -147,7 +148,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         message: action.content,
-      }
+      };
     case CHANGE_MARK_FORM: {
       let shape;
       if ((state.turnCount % 2) === 0) {
@@ -780,7 +781,6 @@ const tictactoeReducer = (state = initialState, action = {}) => {
             win: false,
           },
         ],
-        ready: false,
         turnCount: 0,
         victory: false,
         message: 'Are you ready?',
