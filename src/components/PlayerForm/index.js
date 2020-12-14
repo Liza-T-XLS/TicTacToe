@@ -47,7 +47,7 @@ const PlayerForm = ({
       )}
       {displayStatus && (
         <div className="playerNameDisplay">
-          <p>{playerName}</p>
+          <p className="playerName">{playerName}</p>
           <button className="editButton" type="button" onClick={onClickHandler}>
             <img className="editPenImg" src={editPen} alt="" />
           </button>

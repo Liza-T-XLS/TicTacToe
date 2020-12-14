@@ -4,9 +4,12 @@
 
 .playerNameDisplay {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
 
+  .playerName {
+    margin-right: 1rem;
+  }
   .editButton {
     border: 1px solid grey;
     border-radius: 5px;
