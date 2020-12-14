@@ -82,7 +82,7 @@ const initialState = {
   ready: false,
   turnCount: 0,
   victory: false,
-  message: 'Are you ready?',
+  message: 'Let\'s play!',
 };
 
 const tictactoeReducer = (state = initialState, action = {}) => {
@@ -205,6 +205,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[1].name} has won!`,
         };
       }
 
@@ -239,6 +240,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[0].name} has won!`,
         };
       }
 
@@ -273,6 +275,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[1].name} has won!`,
         };
       }
 
@@ -307,6 +310,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[0].name} has won!`,
         };
       }
 
@@ -341,6 +345,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[1].name} has won!`,
         };
       }
 
@@ -375,6 +380,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[0].name} has won!`,
         };
       }
 
@@ -409,6 +415,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[1].name} has won!`,
         };
       }
 
@@ -443,6 +450,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[0].name} has won!`,
         };
       }
 
@@ -477,6 +485,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[1].name} has won!`,
         };
       }
 
@@ -511,6 +520,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[0].name} has won!`,
         };
       }
 
@@ -545,6 +555,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[1].name} has won!`,
         };
       }
 
@@ -579,6 +590,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[0].name} has won!`,
         };
       }
 
@@ -613,6 +625,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[1].name} has won!`,
         };
       }
 
@@ -647,6 +660,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[0].name} has won!`,
         };
       }
 
@@ -681,6 +695,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[1].name} has won!`,
         };
       }
 
@@ -715,6 +730,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
           ...state,
           grid: newGrid,
           victory: true,
+          message: `${state.players[0].name} has won!`,
         };
       }
 
@@ -783,7 +799,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
         ],
         turnCount: 0,
         victory: false,
-        message: 'Are you ready?',
+        message: 'Let\'s play!',
       };
     default: return state;
   }
