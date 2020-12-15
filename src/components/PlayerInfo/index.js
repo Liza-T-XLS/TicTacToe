@@ -2,6 +2,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 import './playerInfo.scss';
 
@@ -30,12 +31,15 @@ const PlayerInfo = ({ id, playerTitle, playerName, markForm, turnCount, ready, v
   else {
     playerTurn = false;
   }
+
+  const cssClassName = classNames(markForm, { bounce: playerTurn && ready && !victory });
+
   return (
     <div className="playerInfo">
       <p className="playerNumber">{playerTitle}</p>
       <PlayerForm id={id} />
       <div className="playerMark">
-        <img src={mark} alt={markForm} className={markForm} />
+        <img src={mark} alt={markForm} className={cssClassName} />
         {ready && playerTurn && !victory && <p>{playerName}, it's your turn to play!</p>}
       </div>
     </div>

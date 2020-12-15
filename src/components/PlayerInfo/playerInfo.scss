@@ -12,12 +12,31 @@
       width: 60px;
       filter: invert(12%) sepia(83%) saturate(5841%) hue-rotate(244deg) brightness(87%) contrast(153%);
       margin: calc(2rem - 5px);
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      transform-origin: bottom;
     }
+    .bounce {
+      animation-name: bounce;
+      animation-timing-function: linear;
+    }
+    @keyframes bounce {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-30px); }
+      100% { transform: translateY(0); }
+  }
     .circle {
       height: 50px;
       width: 50px;
       filter: invert(37%) sepia(93%) saturate(7471%) hue-rotate(356deg) brightness(91%) contrast(135%);
       margin: 2rem;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      transform-origin: bottom;
+    }
+    .bounce {
+      animation-name: bounce;
+      animation-timing-function: linear;
     }
   }
 }
