@@ -1,6 +1,8 @@
 .playerInfo {
   text-align: center;
   width: calc(100% / 3);
+  color: white;
+  text-shadow: 2px 2px 2px rgb(206, 192, 255);
   .playerNumber {
     font-weight: bold;
     margin: 1rem 0rem 1rem 0 rem;
@@ -10,7 +12,7 @@
     .cross {
       height: 60px;
       width: 60px;
-      filter: invert(12%) sepia(83%) saturate(5841%) hue-rotate(244deg) brightness(87%) contrast(153%);
+      filter: invert(12%) sepia(83%) saturate(5841%) hue-rotate(244deg) brightness(87%) contrast(153%) drop-shadow( 0px 0px 5px rgba(255, 255, 255, .7));
       margin: calc(2rem - 5px);
       animation-duration: 2s;
       animation-iteration-count: infinite;
@@ -28,7 +30,7 @@
     .circle {
       height: 50px;
       width: 50px;
-      filter: invert(37%) sepia(93%) saturate(7471%) hue-rotate(356deg) brightness(91%) contrast(135%);
+      filter: invert(37%) sepia(93%) saturate(7471%) hue-rotate(356deg) brightness(91%) contrast(135%) drop-shadow( 0px 0px 5px rgba(255, 255, 255, .7));
       margin: 2rem;
       animation-duration: 2s;
       animation-iteration-count: infinite;
