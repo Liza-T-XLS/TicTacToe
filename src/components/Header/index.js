@@ -1,6 +1,7 @@
 // == Imports
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './header.scss';
 
@@ -8,7 +9,7 @@ import './header.scss';
 
 const Header = () => (
   <header className="header">
-    <h1>Tic Tac Toe</h1>
+    <h1><Link to="/">Tic Tac Toe</Link></h1>
   </header>
 );
 

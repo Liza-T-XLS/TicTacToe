@@ -4,6 +4,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import store from 'src/store';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from 'src/containers/App';
 
@@ -11,7 +12,9 @@ import App from 'src/containers/App';
 
 const rootReactElement = (
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>
 );
 
