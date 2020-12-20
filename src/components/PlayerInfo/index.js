@@ -6,7 +6,7 @@ import classNames from 'classnames';
 
 import './playerInfo.scss';
 
-import PlayerForm from 'src/containers/PlayerForm';
+import PlayerForm from 'src/containers/PlayerInfo/PlayerForm';
 import cross from 'src/assets/cross.svg';
 import circle from 'src/assets/circle.svg';
 

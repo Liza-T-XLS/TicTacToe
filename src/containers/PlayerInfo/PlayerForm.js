@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import PlayerForm from 'src/components/PlayerForm';
+import PlayerForm from 'src/components/PlayerInfo/PlayerForm';
 import { savePlayerName, displayPlayerName, editPlayerName } from 'src/actions/tictactoe';
 
 const mapStateToProps = (state, ownProps) => {
