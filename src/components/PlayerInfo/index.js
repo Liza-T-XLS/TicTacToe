@@ -42,7 +42,9 @@ const PlayerInfo = ({ id, playerTitle, playerName, markForm, turnCount, ready, v
       <PlayerForm id={id} />
       <div className="playerMark">
         <img src={mark} alt={markForm} className={cssClassName} />
-        {ready && playerTurn && !victory && <p><span className={cssClassName2}>{playerName}</span>, it's your turn to play!</p>}
+        {/* {ready && playerTurn && !victory && <p><span className={cssClassName2}>{playerName}</span>, it's your turn to play!</p>} */}
+        {ready && !victory
+        && <div className="turnNotice">{ready && playerTurn && !victory && <p><span className={cssClassName2}>{playerName}</span>, it's your turn to play!</p>}</div>}
       </div>
     </div>
   );
