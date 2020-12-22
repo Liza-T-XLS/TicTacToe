@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
-import Message from 'src/components/Message';
-// import { resetGame } from 'src/actions/tictactoe';
+import Header from 'src/components/Header';
 
 const mapStateToProps = (state) => ({
-  content: state.message,
+  ready: state.ready,
+  turnCount: state.turnCount,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -13,4 +13,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Message);
+)(Header);

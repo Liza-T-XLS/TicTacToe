@@ -1,3 +1,11 @@
+@import 'src/styles/_vars.scss';
+
 .startButton {
   margin: 1.5rem;
+}
+
+@media (max-width: $mobileBreakPoint) {
+  .startButton {
+    margin-bottom: 0;
+  }
 }

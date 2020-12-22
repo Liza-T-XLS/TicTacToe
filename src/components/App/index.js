@@ -6,7 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import './app.scss';
 
-import Header from 'src/components/Header';
+import Header from 'src/containers/Header';
 import PlayerInfo from 'src/containers/PlayerInfo';
 import Message from 'src/containers/Message';
 import Grid from 'src/containers/Grid';
@@ -19,7 +19,6 @@ import NotFound from 'src/components/NotFound';
 
 const App = ({ players, checkReady }) => {
   useEffect(() => {
-    console.log('ready?');
     checkReady();
   }, [players]);
 

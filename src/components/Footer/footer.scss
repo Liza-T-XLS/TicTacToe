@@ -1,6 +1,14 @@
+@import 'src/styles/_vars.scss';
+
 .footer {
   text-align: center;
   padding: 2rem;
   margin-top: 3rem;
   color: white;
+}
+
+@media (max-width: $mobileBreakPoint) {
+  .footer {
+    margin-top: 0;
+  }
 }

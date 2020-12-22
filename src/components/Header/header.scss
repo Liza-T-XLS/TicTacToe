@@ -1,3 +1,5 @@
+@import 'src/styles/_vars.scss';
+
 .header {
   font-size: 1.5rem;
   font-weight: bold;
@@ -8,5 +10,14 @@
   .subheading {
     padding: 1rem;
     font-size: 1rem;
+  }
+}
+
+@media (max-width: $mobileBreakPoint) {
+  .header {
+    padding-bottom: 0rem;
+    .subheading.undisplayed {
+      display: none;
+    }
   }
 }
