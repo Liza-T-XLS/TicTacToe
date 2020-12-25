@@ -22,24 +22,23 @@ const GridSquare = ({
 }) => {
   const crossMark = cross;
   const circleMark = circle;
-  // const cssClassName = classNames('cross', { winning: win });
-  // console.log(win);
-  // console.log('1: ' + cssClassName);
+
   const gridSquareOnClickHandler = () => {
     console.log('square clicked ' + id);
     if (!ready) {
-      console.log('Enter all players');
       sendMessage('Both players\' names must be entered for the game to begin');
-    } else {
+    }
+    else {
       if (ready && !clickedStatus && !victory) {
+        sendMessage('Let\'s play!');
         changeMarkForm(id);
         checkWin(markForm);
       }
       else {
-        console.log('TODO: this spot has already been called');
+        sendMessage('This spot has already been called');
       }
-    };
     }
+  };
 
   if (markForm === 'cross') {
     const cssClassName = classNames('cross', { winning: win });
