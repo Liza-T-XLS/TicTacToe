@@ -19,6 +19,7 @@ const GridSquare = ({
   victory,
   win,
   sendMessage,
+  turnCount,
 }) => {
   const crossMark = cross;
   const circleMark = circle;
@@ -28,14 +29,20 @@ const GridSquare = ({
     if (!ready) {
       sendMessage('Both players\' names must be entered for the game to begin');
     }
-    else {
-      if (ready && !clickedStatus && !victory) {
-        sendMessage('Let\'s play!');
-        changeMarkForm(id);
-        checkWin(markForm);
-      }
-      else {
+    else if (ready && !clickedStatus && !victory && turnCount !== 9) {
+      sendMessage('Let\'s play!');
+      changeMarkForm(id);
+      checkWin(markForm);
+      // if (turnCount === 9 && !victory) {
+      //   sendMessage('It\'s a tie!');
+      // };
+    }
+    else if (ready && clickedStatus && !victory) {
+      if (turnCount !== 9) {
         sendMessage('This spot has already been called');
+      }
+      else if (turnCount === 9) {
+        sendMessage('The game is over');
       }
     }
   };
@@ -75,6 +82,7 @@ GridSquare.propTypes = {
   victory: PropTypes.bool.isRequired,
   win: PropTypes.bool.isRequired,
   sendMessage: PropTypes.func.isRequired,
+  turnCount: PropTypes.number.isRequired,
 };
 
 GridSquare.defaultProps = {

@@ -11,6 +11,7 @@ const mapStateToProps = (state, ownProps) => {
     clickedStatus: gridSquare.clicked,
     victory: state.victory,
     win: gridSquare.win,
+    turnCount: state.turnCount,
   });
 };
 
@@ -23,7 +24,7 @@ const mapDispatchToProps = (dispatch) => ({
   },
   sendMessage: (content) => {
     dispatch(sendMessage(content));
-  }
+  },
 });
 
 export default connect(

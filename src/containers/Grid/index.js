@@ -1,14 +1,16 @@
 import { connect } from 'react-redux';
 import Grid from 'src/components/Grid';
-import { changeMarkForm } from 'src/actions/tictactoe';
+import { sendMessage } from 'src/actions/tictactoe';
 
 const mapStateToProps = (state) => ({
   grid: state.grid,
+  turnCount: state.turnCount,
+  victory: state.victory,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  changeMarkForm: (id) => {
-    dispatch(changeMarkForm(id));
+  sendMessage: (content) => {
+    dispatch(sendMessage(content));
   },
 });
 

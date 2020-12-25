@@ -32,7 +32,7 @@ const PlayerInfo = ({ id, playerTitle, playerName, markForm, turnCount, ready, v
     playerTurn = false;
   }
 
-  const cssClassName = classNames(markForm, { bounce: playerTurn && ready && !victory });
+  const cssClassName = classNames(markForm, { bounce: playerTurn && ready && !victory && turnCount !== 9 });
 
   const cssClassName2 = classNames(markForm + id, { colored: playerTurn && ready && !victory });
 
@@ -44,7 +44,7 @@ const PlayerInfo = ({ id, playerTitle, playerName, markForm, turnCount, ready, v
         <img src={mark} alt={markForm} className={cssClassName} />
         {/* {ready && playerTurn && !victory && <p><span className={cssClassName2}>{playerName}</span>, it's your turn to play!</p>} */}
         {ready && !victory
-        && <div className="turnNotice">{ready && playerTurn && !victory && <p><span className={cssClassName2}>{playerName}</span>, it's your turn to play!</p>}</div>}
+        && <div className="turnNotice">{ready && playerTurn && !victory && turnCount !== 9 && <p><span className={cssClassName2}>{playerName}</span>, it's your turn to play!</p>}</div>}
       </div>
     </div>
   );
