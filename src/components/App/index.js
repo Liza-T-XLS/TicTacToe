@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 import './app.scss';
 
@@ -24,6 +25,9 @@ const App = ({ players, checkReady }) => {
 
   return (
     <div className="app">
+      <Helmet>
+        <title>TicTacToe | Home</title>
+      </Helmet>
       <Header />
       <main>
         <Switch>

@@ -1,6 +1,7 @@
 // == Imports
 
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 import './about.scss';
 
@@ -8,6 +9,9 @@ import './about.scss';
 
 const About = () => (
   <div className="about">
+    <Helmet>
+      <title>TicTacToe | About</title>
+    </Helmet>
     <p>Hello,<br /><br />
       I built this website for training purposes. If you like it, please check out my online <a href="https://liza-t-xls.netlify.app/index-eng.html" title="Liza-t-xls" target="_blank" rel="noopener noreferrer" className="resume">résumé</a> :)<br /><br />
       Enjoy!
