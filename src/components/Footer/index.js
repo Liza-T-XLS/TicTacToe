@@ -10,7 +10,7 @@ import './footer.scss';
 const Footer = () => (
   <footer className="footer">
     <p>&copy; 2020 -&nbsp;
-      <a href="https://liza-t-xls.netlify.app/" title="Liza-t-xls" target="_blank" rel="noopener noreferrer">Liza-T-XLS
+      <a href="https://liza-t-xls.netlify.app/index-eng.html" title="Liza-t-xls" target="_blank" rel="noopener noreferrer">Liza-T-XLS
       </a><br /><br /><Link to="/about">About</Link>
     </p>
   </footer>

@@ -14,7 +14,7 @@ const Header = ({ ready, turnCount }) => {
 
   return (
     <header className="header">
-      <h1><Link to="/">Tic Tac Toe</Link></h1>
+      <h1><Link to="/" title="Home">Tic Tac Toe</Link></h1>
       <p className={cssClassName}>You have probably ended up in some part of the galaxy where people only have one computer for the whole family...</p>
     </header>
   );

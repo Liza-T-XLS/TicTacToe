@@ -33,9 +33,6 @@ const GridSquare = ({
       sendMessage('Let\'s play!');
       changeMarkForm(id);
       checkWin(markForm);
-      // if (turnCount === 9 && !victory) {
-      //   sendMessage('It\'s a tie!');
-      // };
     }
     else if (ready && clickedStatus && !victory) {
       if (turnCount !== 9) {
