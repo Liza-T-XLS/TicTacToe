@@ -108,6 +108,7 @@ const tictactoeReducer = (state = initialState, action = {}) => {
       const newPlayer = {
         ...state.players[action.id - 1],
         displayName: true,
+        name: state.players[action.id - 1].name.replace(/\s+/g, ''),
       };
       newPlayers[action.id - 1] = newPlayer;
       return {
