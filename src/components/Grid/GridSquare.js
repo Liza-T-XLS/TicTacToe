@@ -25,7 +25,6 @@ const GridSquare = ({
   const circleMark = circle;
 
   const gridSquareOnClickHandler = () => {
-    console.log('square clicked ' + id);
     if (!ready) {
       sendMessage('Both players\' names must be entered for the game to begin');
     }
@@ -61,9 +60,7 @@ const GridSquare = ({
     );
   }
   return (
-    <div className="item" onClick={gridSquareOnClickHandler}>
-      {/* <img src={circleMark} alt={markForm} className={markForm} /> */}
-    </div>
+    <div className="item" onClick={gridSquareOnClickHandler} />
   );
 };
 

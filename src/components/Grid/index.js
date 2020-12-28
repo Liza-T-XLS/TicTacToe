@@ -10,6 +10,8 @@ import GridSquare from 'src/containers/Grid/GridSquare';
 // == Component
 
 const Grid = ({ grid, turnCount, victory, sendMessage }) => {
+  // Everytime the grid changes, checks if the maximum number of turns has been reached
+  // and if so and victory is still false, a tie message is displayed
   useEffect(() => {
     if (turnCount === 9 && !victory) {
       sendMessage('It\'s a tie!');

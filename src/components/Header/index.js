@@ -10,6 +10,7 @@ import './header.scss';
 // == Component
 
 const Header = ({ ready, turnCount }) => {
+  // The 'undisplayed' classname is only relevant for mobile screens
   const cssClassName = classNames('subheading', { undisplayed: ready || (!ready && turnCount > 0) });
 
   return (

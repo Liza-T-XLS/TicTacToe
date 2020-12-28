@@ -4,7 +4,6 @@ import { changeMarkForm, checkWin, sendMessage } from 'src/actions/tictactoe';
 
 const mapStateToProps = (state, ownProps) => {
   const gridSquare = state.grid[ownProps.id - 1];
-  // console.log(state.[gridSquare].clicked);
   return ({
     markForm: gridSquare.form,
     ready: state.ready,

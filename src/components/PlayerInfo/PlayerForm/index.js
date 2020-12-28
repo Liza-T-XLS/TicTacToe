@@ -17,21 +17,17 @@ const PlayerForm = ({
   editPlayerName,
 }) => {
   const onChangeHandler = (e) => {
-    console.log(e.target.value);
     savePlayerName(id, e.target.value);
-    console.log(displayStatus);
   };
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
     if (playerName.length > 1) {
-      console.log('name ' + id + ' submitted');
       displayPlayerName(id);
     }
   };
 
   const onClickHandler = (e) => {
-    console.log('edit ' + id + ' name');
     editPlayerName(id);
   };
 

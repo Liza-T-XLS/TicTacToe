@@ -9,7 +9,6 @@ import './startButton.scss';
 
 const StartButton = ({ startButtonMessage, resetGame }) => {
   const startButtonOnClickHandler = () => {
-    console.log('startButton clicked');
     resetGame();
   };
 

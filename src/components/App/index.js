@@ -19,6 +19,8 @@ import NotFound from 'src/components/NotFound';
 // == Component
 
 const App = ({ players, checkReady }) => {
+  // Checks if both players are ready (if they have both entered their names,
+  // if not, cannot begin to play)
   useEffect(() => {
     checkReady();
   }, [players]);

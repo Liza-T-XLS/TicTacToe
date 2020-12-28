@@ -12,7 +12,15 @@ import circle from 'src/assets/circle.svg';
 
 // ==  Component
 
-const PlayerInfo = ({ id, playerTitle, playerName, markForm, turnCount, ready, victory }) => {
+const PlayerInfo = ({
+  id,
+  playerTitle,
+  playerName,
+  markForm,
+  turnCount,
+  ready,
+  victory,
+}) => {
   let mark;
 
   if (markForm === 'cross') {
@@ -22,6 +30,9 @@ const PlayerInfo = ({ id, playerTitle, playerName, markForm, turnCount, ready, v
     mark = circle;
   }
 
+  // Determines which player's turn it is (a message is displayed to inform the player accordingly)
+  // If the turnCount is even and the player's id is not, it means that it is player#1's turn to play
+  // If the turnCount is odd and the player's id is even, it means that it is player#2's turn to play
   let playerTurn;
 
   if ((((turnCount % 2) === 0) && (id % 2 !== 0))
@@ -42,7 +53,6 @@ const PlayerInfo = ({ id, playerTitle, playerName, markForm, turnCount, ready, v
       <PlayerForm id={id} />
       <div className="playerMark">
         <img src={mark} alt={markForm} className={cssClassName} />
-        {/* {ready && playerTurn && !victory && <p><span className={cssClassName2}>{playerName}</span>, it's your turn to play!</p>} */}
         {ready && !victory
         && <div className="turnNotice">{ready && playerTurn && !victory && turnCount !== 9 && <p><span className={cssClassName2}>{playerName}</span>, it's your turn to play!</p>}</div>}
       </div>
