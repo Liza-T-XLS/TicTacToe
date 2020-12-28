@@ -7,7 +7,7 @@ import {
   CHECK_WIN,
   SEND_MESSAGE,
   CHECK_READY,
-} from 'src/actions/tictactoe';
+} from '../actions/tictactoe';
 
 const initialState = {
   players: [
